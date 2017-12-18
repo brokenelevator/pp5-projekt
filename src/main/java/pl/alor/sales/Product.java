@@ -3,15 +3,22 @@ package pl.alor.sales;
 public class Product
 	{
 	private short stockQty;
+	private String name;
 
 	public Product(String name, short stockQty)
 		{
 		this.stockQty = stockQty;
+		this.name = name;
 		}
 
 	public Product(String name)
 		{
-		this.stockQty = 0;
+		this(name, (short)0);
+		}
+		
+	public String getName()
+		{
+		return name;
 		}
 
 	public boolean isInStock()
@@ -35,12 +42,12 @@ public class Product
 		else stockQty -= number;
 		}
 	
-	public void putBack()
+	public void put()
 		{
-		putBack((short)1);
+		put((short)1);
 		}
 	
-	public void putBack(short number)
+	public void put(short number)
 		{
 		stockQty += number;
 		}

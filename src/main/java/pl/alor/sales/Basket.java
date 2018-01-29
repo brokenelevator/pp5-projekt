@@ -37,4 +37,9 @@ public class Basket
 		{
 		return contents.getOrDefault(product, 0);
 		}
+		
+	public HashMap<Product, Integer> getItems()
+		{
+		return contents;
+		}
 	}

@@ -8,7 +8,7 @@ public class OrderTest
 	@Test
 	public void calculatesOrderOfSingleTypeItem()
 		{
-		Product product1 = new Product("lego 9293", (short)12, (short)12);
+		Product product1 = new Product("92939495", (short)12, (short)12);
 		Basket basket = new Basket();
 		try
 			{
@@ -22,10 +22,10 @@ public class OrderTest
 	@Test
 	public void calculatesOrderOfMultipleTypeItem()
 		{
-		Product product1 = new Product("lego 9293", (short)4, (short)5);
-		Product product2 = new Product("lego 9394", (short)7, (short)3);
-		Product product3 = new Product("lego 9495", (short)9, (short)1);
-		Product product4 = new Product("lego 9596", (short)12, (short)4);
+		Product product1 = new Product("92939495", (short)4, (short)5);
+		Product product2 = new Product("93949596", (short)7, (short)3);
+		Product product3 = new Product("94959697", (short)9, (short)1);
+		Product product4 = new Product("95969798", (short)12, (short)4);
 		Basket basket = new Basket();
 		try
 			{
@@ -42,7 +42,7 @@ public class OrderTest
 	@Test
 	public void calculatesSingleTypeItemWithDiscount()
 		{
-		Product product1 = new Product("lego 9293", (short)12, (short)12);
+		Product product1 = new Product("92939495", (short)12, (short)12);
 		Basket basket = new Basket();
 		try
 			{
@@ -57,10 +57,10 @@ public class OrderTest
 	@Test
 	public void calculatesMultipleTypeItemWithDiscount()
 		{
-		Product product1 = new Product("lego 9293", (short)4, (short)5);
-		Product product2 = new Product("lego 9394", (short)7, (short)3);
-		Product product3 = new Product("lego 9495", (short)9, (short)1);
-		Product product4 = new Product("lego 9596", (short)12, (short)4);
+		Product product1 = new Product("92939495", (short)4, (short)5);
+		Product product2 = new Product("93949596", (short)7, (short)3);
+		Product product3 = new Product("94959697", (short)9, (short)1);
+		Product product4 = new Product("95969798", (short)12, (short)4);
 		Basket basket = new Basket();
 		try
 			{
@@ -78,10 +78,10 @@ public class OrderTest
 	@Test
 	public void calculatesWithCompleteDiscount()
 		{
-		Product product1 = new Product("lego 9293", (short)4, (short)5);
-		Product product2 = new Product("lego 9394", (short)7, (short)3);
-		Product product3 = new Product("lego 9495", (short)9, (short)1);
-		Product product4 = new Product("lego 9596", (short)12, (short)4);
+		Product product1 = new Product("92939495", (short)4, (short)5);
+		Product product2 = new Product("93949596", (short)7, (short)3);
+		Product product3 = new Product("94959697", (short)9, (short)1);
+		Product product4 = new Product("95969798", (short)12, (short)4);
 		Basket basket = new Basket();
 		try
 			{

@@ -3,24 +3,24 @@ package pl.alor.sales;
 public class Product
 	{
 	private short stockQty;
-	private String name;
+	private String id;
 	private short price;
 
-	public Product(String name, short price, short stockQty)
+	public Product(String id, short price, short stockQty)
 		{
 		this.stockQty = stockQty;
-		this.name = name;
+		this.id = id;
 		this.price = price;
 		}
 
-	public Product(String name, short price)
+	public Product(String id, short price)
 		{
-		this(name, price, (short)0);
+		this(id, price, (short)0);
 		}
 		
-	public String getName()
+	public String getId()
 		{
-		return name;
+		return id;
 		}
 		
 	public short getPrice()

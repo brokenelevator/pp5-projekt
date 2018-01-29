@@ -4,21 +4,28 @@ public class Product
 	{
 	private short stockQty;
 	private String name;
+	private short price;
 
-	public Product(String name, short stockQty)
+	public Product(String name, short price, short stockQty)
 		{
 		this.stockQty = stockQty;
 		this.name = name;
+		this.price = price;
 		}
 
-	public Product(String name)
+	public Product(String name, short price)
 		{
-		this(name, (short)0);
+		this(name, price, (short)0);
 		}
 		
 	public String getName()
 		{
 		return name;
+		}
+		
+	public short getPrice()
+		{
+		return price;
 		}
 
 	public boolean isInStock()

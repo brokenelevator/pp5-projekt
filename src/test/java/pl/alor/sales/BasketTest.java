@@ -8,7 +8,7 @@ public class BasketTest
 	@Test
 	public void itAllowAddProductToBasket()
 		{
-		Product product1 = new Product("lego 9293", (short)1);
+		Product product1 = new Product("lego 9293", (short)12, (short)1);
 		
 		Basket basket = new Basket();
 		try
@@ -23,9 +23,9 @@ public class BasketTest
 	@Test
 	public void itAllowAddMultipleProduct()
 		{
-		Product product1 = new Product("lego 9293", (short)1);
-		Product product2 = new Product("lego 1311", (short)1);
-		Product product3 = new Product("lego 1312", (short)1);
+		Product product1 = new Product("lego 9293", (short)12, (short)1);
+		Product product2 = new Product("lego 1311", (short)12, (short)1);
+		Product product3 = new Product("lego 1312", (short)12, (short)1);
 		
 		Basket basket = new Basket();
 		try
@@ -42,7 +42,7 @@ public class BasketTest
 	@Test
 	public void itAllowAddMultipleProductSameType()
 		{
-		Product product1 = new Product("lego 9293", (short)3);
+		Product product1 = new Product("lego 9293", (short)12, (short)3);
 		
 		Basket basket = new Basket();
 		try
@@ -57,7 +57,7 @@ public class BasketTest
 	@Test
 	public void itStoresNumberProductSameType()
 		{
-		Product product1 = new Product("lego 9293", (short)3);
+		Product product1 = new Product("lego 9293", (short)12, (short)3);
 		
 		Basket basket = new Basket();
 		try
@@ -72,7 +72,7 @@ public class BasketTest
 	@Test
 	public void addingNotAvailableProductDoesNotChangeBasketContents()
 		{
-		Product product1 = new Product("lego 9293", (short)0);
+		Product product1 = new Product("lego 9293", (short)12, (short)0);
 		Basket basket = new Basket();
 		try
 			{

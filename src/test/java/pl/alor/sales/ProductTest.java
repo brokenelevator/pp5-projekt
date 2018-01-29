@@ -8,7 +8,7 @@ public class ProductTest
 	@Test
 	public void canCreateOutOfStockProduct()
 		{
-		Product product = new Product("lego 9293");
+		Product product = new Product("lego 9293", (short)12);
 		
 		Assert.assertFalse(product.isInStock());
 		}
@@ -16,7 +16,7 @@ public class ProductTest
 	@Test
 	public void itStoresCorrectStockValues()
 		{
-		Product product = new Product("lego 9293", (short)3);
+		Product product = new Product("lego 9293", (short)12, (short)3);
 		
 		if(product.isInStock((short)3)) Assert.assertFalse(product.isInStock((short)4));
 		}	
@@ -24,14 +24,14 @@ public class ProductTest
 	@Test
 	public void itStoresCorrectName()
 		{
-		Product product = new Product("lego 9293");
+		Product product = new Product("lego 9293", (short)12);
 		Assert.assertEquals("lego 9293", product.getName());
 		}
 
 	@Test
 	public void canTakeOneProduct()
 		{
-		Product product = new Product("lego 9293", (short)1);
+		Product product = new Product("lego 9293", (short)12, (short)1);
 		Boolean pass = false;
 		try
 			{
@@ -46,7 +46,7 @@ public class ProductTest
 	@Test
 	public void canTakeMoreProduct()
 		{
-		Product product = new Product("lego 9293", (short)8);
+		Product product = new Product("lego 9293", (short)12, (short)8);
 		Boolean pass = false;
 		try
 			{
@@ -65,7 +65,7 @@ public class ProductTest
 	@Test
 	public void itThrowsWhenNotAvailable()
 		{
-		Product product1 = new Product("lego 9293", (short)0);
+		Product product1 = new Product("lego 9293", (short)12, (short)0);
 		Boolean threw = false;
 		try
 			{
@@ -81,7 +81,7 @@ public class ProductTest
 	@Test
 	public void canPutOneProduct()
 		{
-		Product product = new Product("lego 9293");
+		Product product = new Product("lego 9293", (short)12);
 		product.put();
 		if(product.isInStock()) Assert.assertFalse(product.isInStock((short)2));
 		else Assert.assertFalse(true);
@@ -90,7 +90,7 @@ public class ProductTest
 	@Test
 	public void canPutMoreProduct()
 		{
-		Product product = new Product("lego 9293", (short)2);
+		Product product = new Product("lego 9293", (short)12, (short)2);
 		product.put((short)6);
 		if(product.isInStock((short)8)) Assert.assertFalse(product.isInStock((short)9));
 		else Assert.assertFalse(true);

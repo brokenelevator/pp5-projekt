@@ -28,7 +28,7 @@ public class ProductTest
 		Assert.assertEquals("lego 9293", product.getName());
 		}
 
-	@Test//?
+	@Test
 	public void canTakeOneProduct()
 		{
 		Product product = new Product("lego 9293", (short)1);
@@ -63,6 +63,22 @@ public class ProductTest
 		}
 
 	@Test
+	public void itThrowsWhenNotAvailable()
+		{
+		Product product1 = new Product("lego 9293", (short)0);
+		Boolean threw = false;
+		try
+			{
+			product1.take();
+			}
+		catch(Exception e)
+			{
+			threw = true;
+			}
+		Assert.assertTrue(threw);
+		}
+	
+	@Test
 	public void canPutOneProduct()
 		{
 		Product product = new Product("lego 9293");
@@ -79,5 +95,4 @@ public class ProductTest
 		if(product.isInStock((short)8)) Assert.assertFalse(product.isInStock((short)9));
 		else Assert.assertFalse(true);
 		}
-	
 	}

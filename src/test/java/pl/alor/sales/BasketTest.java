@@ -70,20 +70,16 @@ public class BasketTest
 		}
 	
 	@Test
-	public void itThrowsWhenNotAvailable()
+	public void addingNotAvailableProductDoesNotChangeBasketContents()
 		{
 		Product product1 = new Product("lego 9293", (short)0);
 		Basket basket = new Basket();
-		Boolean threw = false;
 		try
 			{
 			basket.add(product1);
 			}
-		catch(Exception e)
-			{
-			threw = true;
-			}
-		Assert.assertTrue(threw);
+		catch(Exception e) {}
+		Assert.assertTrue(basket.isEmpty());
 		}
 
 	@Test

@@ -15,6 +15,11 @@ public class ProductCatalog
 		this.catalog = new HashMap<String, ProductData>();
 		}
 
+	public HashMap<String, ProductData> getCatalog()
+		{
+		return catalog;
+		}
+
 	public ProductData getProductById(String id)
 		{
 		return catalog.get(id);

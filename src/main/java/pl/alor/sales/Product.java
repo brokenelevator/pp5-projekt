@@ -1,21 +1,23 @@
 package pl.alor.sales;
 
+import pl.alor.repository.ProductData;
+
 public class Product
 	{
 	private short stockQty;
 	private String id;
 	private short price;
 
-	public Product(String id, short price, short stockQty)
+	public Product(ProductData product, short stockQty)
 		{
 		this.stockQty = stockQty;
-		this.id = id;
-		this.price = price;
+		this.id = product.getId();
+		this.price = product.getPrice();
 		}
 
-	public Product(String id, short price)
+	public Product(ProductData product)
 		{
-		this(id, price, (short)0);
+		this(product, (short)0);
 		}
 		
 	public String getId()

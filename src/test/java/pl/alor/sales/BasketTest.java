@@ -2,13 +2,15 @@ package pl.alor.sales;
 
 import org.junit.Test;
 import org.junit.Assert;
+import pl.alor.repository.ProductData;
 
 public class BasketTest
 	{
 	@Test
 	public void itAllowAddProductToBasket()
 		{
-		Product product1 = new Product("92939495", (short)12, (short)1);
+		ProductData productData1 = new ProductData("92939495", "lego 9293", (short)12);
+		Product product1 = new Product(productData1, (short)1);
 		
 		Basket basket = new Basket();
 		try
@@ -23,9 +25,12 @@ public class BasketTest
 	@Test
 	public void itAllowAddMultipleProduct()
 		{
-		Product product1 = new Product("92939495", (short)12, (short)1);
-		Product product2 = new Product("13111412", (short)12, (short)1);
-		Product product3 = new Product("13121413", (short)12, (short)1);
+		ProductData productData1 = new ProductData("92939495", "lego 9293", (short)12);
+		Product product1 = new Product(productData1, (short)1);
+		ProductData productData2 = new ProductData("13111412", "lego 1311", (short)12);
+		Product product2 = new Product(productData2, (short)1);
+		ProductData productData3 = new ProductData("13121413", "lego 1312", (short)12);
+		Product product3 = new Product(productData3, (short)1);
 		
 		Basket basket = new Basket();
 		try
@@ -42,7 +47,8 @@ public class BasketTest
 	@Test
 	public void itAllowAddMultipleProductSameType()
 		{
-		Product product1 = new Product("92939495", (short)12, (short)3);
+		ProductData productData1 = new ProductData("92939495", "lego 9293", (short)12);
+		Product product1 = new Product(productData1, (short)3);
 		
 		Basket basket = new Basket();
 		try
@@ -57,7 +63,8 @@ public class BasketTest
 	@Test
 	public void itStoresNumberProductSameType()
 		{
-		Product product1 = new Product("92939495", (short)12, (short)3);
+		ProductData productData1 = new ProductData("92939495", "lego 9293", (short)12);
+		Product product1 = new Product(productData1, (short)3);
 		
 		Basket basket = new Basket();
 		try
@@ -72,7 +79,8 @@ public class BasketTest
 	@Test
 	public void addingNotAvailableProductDoesNotChangeBasketContents()
 		{
-		Product product1 = new Product("92939495", (short)12, (short)0);
+		ProductData productData1 = new ProductData("92939495", "lego 9293", (short)12);
+		Product product1 = new Product(productData1, (short)0);
 		Basket basket = new Basket();
 		try
 			{

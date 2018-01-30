@@ -2,13 +2,15 @@ package pl.alor.sales;
 
 import org.junit.Test;
 import org.junit.Assert;
+import pl.alor.repository.ProductData;
 
 public class ProductTest
 	{
 	@Test
 	public void canCreateOutOfStockProduct()
 		{
-		Product product = new Product("92939495", (short)12);
+		ProductData productData = new ProductData("92939495", "lego 9293", (short)12);
+		Product product = new Product(productData);
 		
 		Assert.assertFalse(product.isInStock());
 		}
@@ -16,7 +18,8 @@ public class ProductTest
 	@Test
 	public void itStoresCorrectStockValues()
 		{
-		Product product = new Product("92939495", (short)12, (short)3);
+		ProductData productData = new ProductData("92939495", "lego 9293", (short)12);
+		Product product = new Product(productData, (short)3);
 		
 		if(product.isInStock((short)3)) Assert.assertFalse(product.isInStock((short)4));
 		}	
@@ -24,14 +27,16 @@ public class ProductTest
 	@Test
 	public void itStoresCorrectId()
 		{
-		Product product = new Product("92939495", (short)12);
+		ProductData productData = new ProductData("92939495", "lego 9293", (short)12);
+		Product product = new Product(productData, (short)12);
 		Assert.assertEquals("92939495", product.getId());
 		}
 
 	@Test
 	public void canTakeOneProduct()
 		{
-		Product product = new Product("92939495", (short)12, (short)1);
+		ProductData productData = new ProductData("92939495", "lego 9293", (short)12);
+		Product product = new Product(productData, (short)1);
 		Boolean pass = false;
 		try
 			{
@@ -46,7 +51,8 @@ public class ProductTest
 	@Test
 	public void canTakeMoreProduct()
 		{
-		Product product = new Product("92939495", (short)12, (short)8);
+		ProductData productData = new ProductData("92939495", "lego 9293", (short)12);
+		Product product = new Product(productData, (short)8);
 		Boolean pass = false;
 		try
 			{
@@ -65,11 +71,12 @@ public class ProductTest
 	@Test
 	public void itThrowsWhenNotAvailable()
 		{
-		Product product1 = new Product("92939495", (short)12, (short)0);
+		ProductData productData = new ProductData("92939495", "lego 9293", (short)12);
+		Product product = new Product(productData, (short)0);
 		Boolean threw = false;
 		try
 			{
-			product1.take();
+			product.take();
 			}
 		catch(Exception e)
 			{
@@ -81,7 +88,8 @@ public class ProductTest
 	@Test
 	public void canPutOneProduct()
 		{
-		Product product = new Product("92939495", (short)12);
+		ProductData productData = new ProductData("92939495", "lego 9293", (short)12);
+		Product product = new Product(productData);
 		product.put();
 		if(product.isInStock()) Assert.assertFalse(product.isInStock((short)2));
 		else Assert.assertFalse(true);
@@ -90,7 +98,8 @@ public class ProductTest
 	@Test
 	public void canPutMoreProduct()
 		{
-		Product product = new Product("92939495", (short)12, (short)2);
+		ProductData productData = new ProductData("92939495", "lego 9293", (short)12);
+		Product product = new Product(productData, (short)2);
 		product.put((short)6);
 		if(product.isInStock((short)8)) Assert.assertFalse(product.isInStock((short)9));
 		else Assert.assertFalse(true);

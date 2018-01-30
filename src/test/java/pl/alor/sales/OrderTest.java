@@ -2,13 +2,15 @@ package pl.alor.sales;
 
 import org.junit.Test;
 import org.junit.Assert;
+import pl.alor.repository.ProductData;
 
 public class OrderTest
 	{
 	@Test
 	public void calculatesOrderOfSingleTypeItem()
 		{
-		Product product1 = new Product("92939495", (short)12, (short)12);
+		ProductData productData1 = new ProductData("92939495", "lego 9293", (short)12);
+		Product product1 = new Product(productData1, (short)12);
 		Basket basket = new Basket();
 		try
 			{
@@ -22,10 +24,14 @@ public class OrderTest
 	@Test
 	public void calculatesOrderOfMultipleTypeItem()
 		{
-		Product product1 = new Product("92939495", (short)4, (short)5);
-		Product product2 = new Product("93949596", (short)7, (short)3);
-		Product product3 = new Product("94959697", (short)9, (short)1);
-		Product product4 = new Product("95969798", (short)12, (short)4);
+		ProductData productData1 = new ProductData("92939495", "lego 9293", (short)4);
+		Product product1 = new Product(productData1, (short)5);
+		ProductData productData2 = new ProductData("93949596", "lego 9394", (short)7);
+		Product product2 = new Product(productData2, (short)3);
+		ProductData productData3 = new ProductData("94959697", "lego 9495", (short)9);
+		Product product3 = new Product(productData3, (short)1);
+		ProductData productData4 = new ProductData("95969798", "lego 9596", (short)12);
+		Product product4 = new Product(productData4, (short)4);
 		Basket basket = new Basket();
 		try
 			{
@@ -42,7 +48,8 @@ public class OrderTest
 	@Test
 	public void calculatesSingleTypeItemWithDiscount()
 		{
-		Product product1 = new Product("92939495", (short)12, (short)12);
+		ProductData productData1 = new ProductData("92939495", "lego 9293", (short)12);
+		Product product1 = new Product(productData1, (short)12);
 		Basket basket = new Basket();
 		try
 			{
@@ -57,10 +64,14 @@ public class OrderTest
 	@Test
 	public void calculatesMultipleTypeItemWithDiscount()
 		{
-		Product product1 = new Product("92939495", (short)4, (short)5);
-		Product product2 = new Product("93949596", (short)7, (short)3);
-		Product product3 = new Product("94959697", (short)9, (short)1);
-		Product product4 = new Product("95969798", (short)12, (short)4);
+		ProductData productData1 = new ProductData("92939495", "lego 9293", (short)4);
+		Product product1 = new Product(productData1, (short)5);
+		ProductData productData2 = new ProductData("93949596", "lego 9394", (short)7);
+		Product product2 = new Product(productData2, (short)3);
+		ProductData productData3 = new ProductData("94959697", "lego 9495", (short)9);
+		Product product3 = new Product(productData3, (short)1);
+		ProductData productData4 = new ProductData("95969798", "lego 9596", (short)12);
+		Product product4 = new Product(productData4, (short)4);
 		Basket basket = new Basket();
 		try
 			{
@@ -78,10 +89,14 @@ public class OrderTest
 	@Test
 	public void calculatesWithCompleteDiscount()
 		{
-		Product product1 = new Product("92939495", (short)4, (short)5);
-		Product product2 = new Product("93949596", (short)7, (short)3);
-		Product product3 = new Product("94959697", (short)9, (short)1);
-		Product product4 = new Product("95969798", (short)12, (short)4);
+		ProductData productData1 = new ProductData("92939495", "lego 9293", (short)4);
+		Product product1 = new Product(productData1, (short)5);
+		ProductData productData2 = new ProductData("93949596", "lego 9394", (short)7);
+		Product product2 = new Product(productData2, (short)3);
+		ProductData productData3 = new ProductData("94959697", "lego 9495", (short)9);
+		Product product3 = new Product(productData3, (short)1);
+		ProductData productData4 = new ProductData("95969798", "lego 9596", (short)12);
+		Product product4 = new Product(productData4, (short)4);
 		Basket basket = new Basket();
 		try
 			{

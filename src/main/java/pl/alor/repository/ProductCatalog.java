@@ -1,8 +1,7 @@
 package pl.alor.repository;
 
 import java.util.HashMap;
-import java.io.FileReader;
-import java.io.FileNotFoundException;
+import java.io.InputStreamReader;
 import java.io.IOException;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVIterator;
@@ -23,16 +22,11 @@ public class ProductCatalog
 
 	public void parseDataFile()
 		{
-		FileReader reader;
+		InputStreamReader reader = new InputStreamReader(ProductCatalog.class.getResourceAsStream("/static/ProductCatalogDataFile.csv"));
 		CSVIterator iterator;
 		try
 			{
-			reader = new FileReader("src/main/resources/static/ProductCatalogDataFile.csv");
 			iterator = new CSVIterator(new CSVReader(reader));
-			}
-		catch(FileNotFoundException e)
-			{
-			return;
 			}
 		catch(IOException e)
 			{
